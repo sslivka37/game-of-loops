@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LoopsGame
 {
-    class GamePlayer
+    class ForLoopsGamePlayer
     {
 
         public string NameInput { get; set; }
@@ -80,5 +80,6 @@ namespace LoopsGame
             Console.WriteLine($"Counted {loopCount} odd numbers!");
         }
 
+       
     }
 }

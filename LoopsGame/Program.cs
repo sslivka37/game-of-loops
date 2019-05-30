@@ -11,17 +11,18 @@ namespace LoopsGame
 
             
             Menu menu = new Menu();
-            GamePlayer loopsGame = new GamePlayer();
+            ForLoopsGamePlayer forLoopsGame = new ForLoopsGamePlayer();
+            WhileLoopsGamePlayer whileLoopsGame = new WhileLoopsGamePlayer();
 
             menu.DisplayMenu();
 
             //option 1
-            loopsGame.AskForName();
-            loopsGame.NameInput = Console.ReadLine();
-            loopsGame.CheckForAs();
+            forLoopsGame.AskForName();
+            forLoopsGame.NameInput = Console.ReadLine();
+            forLoopsGame.CheckForAs();
 
             //option 2
-            loopsGame.AskForFiveNumbers();
+            forLoopsGame.AskForFiveNumbers();
 
             var userIntList = new List<int>();
             for(int i = 0; i < 5; i++)
@@ -35,13 +36,13 @@ namespace LoopsGame
                 }
             }
 
-            loopsGame.MaxAndMinUserInput = userIntList;
-            loopsGame.CheckForMaxAndMin();
+            forLoopsGame.MaxAndMinUserInput = userIntList;
+            forLoopsGame.CheckForMaxAndMin();
 
             //option 3
-            loopsGame.AskForOneNumber();
-            loopsGame.NumberInput = int.Parse(Console.ReadLine());
-            loopsGame.CountByOdds();
+            forLoopsGame.AskForOneNumber();
+            forLoopsGame.NumberInput = int.Parse(Console.ReadLine());
+            forLoopsGame.CountByOdds();
             
 
             
