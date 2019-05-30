@@ -70,12 +70,14 @@ namespace LoopsGame
 
         public void CountByOdds()
         {
-            for(int count = 1; count <= NumberInput; count +=2)
+            int loopCount = 0;
+            for(int countTo = 1; countTo <= NumberInput; countTo +=2)
             {
-                Console.WriteLine(count);
+                Console.WriteLine(countTo);
+                loopCount++;
 
             }
-            
+            Console.WriteLine($"Counted {loopCount} odd numbers!");
         }
 
     }

@@ -14,12 +14,16 @@ namespace LoopsGame
 
             menu.DisplayMenu();
 
+            //option 1
             loopsGame.AskForName();
             loopsGame.NameInput = Console.ReadLine();
             loopsGame.CheckForAs();
 
-
-            //1-counting the 'a's game
+            //option 3
+            loopsGame.AskForOneNumber();
+            loopsGame.NumberInput = int.Parse(Console.ReadLine());
+            loopsGame.CountByOdds();
+            
 
             //2-max and min values game
 
