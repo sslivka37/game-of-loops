@@ -9,6 +9,8 @@ namespace LoopsGame
 
         public string NameInput { get; set; }
         public int [] MaxAndMinUserInput { get; set; }
+
+        public int NumberInput { get; set; }
      
 
         public void AskForName ()
@@ -18,12 +20,13 @@ namespace LoopsGame
         
         public void CheckForAs()
         {
-            char checkForA = 'A';
+            char checkForCapitalA = 'A';
+            char checkForLowerA = 'a';
             int numberOfAs = 0;
 
             for (int i = 0; i < NameInput.Length; i++)
             {
-                if (NameInput[i].Equals(char.ToUpper(checkForA)))
+                if (NameInput[i] == checkForCapitalA || NameInput[i] == checkForLowerA)
                 {
                     numberOfAs++;
                 }
@@ -60,7 +63,20 @@ namespace LoopsGame
         }
         
 
+        public void AskForOneNumber()
+        {
+            Console.WriteLine("Enter a positive number");
+        }
 
+        public void CountByOdds()
+        {
+            for(int count = 1; count <= NumberInput; count +=2)
+            {
+                Console.WriteLine(count);
+
+            }
+            
+        }
 
     }
 }

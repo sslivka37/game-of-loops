@@ -8,7 +8,16 @@ namespace LoopsGame
         {
             Console.WriteLine("Welcome to the game of loops!");
 
-            //pick a game (user input)
+            
+            Menu menu = new Menu();
+            GamePlayer loopsGame = new GamePlayer();
+
+            menu.DisplayMenu();
+
+            loopsGame.AskForName();
+            loopsGame.NameInput = Console.ReadLine();
+            loopsGame.CheckForAs();
+
 
             //1-counting the 'a's game
 
