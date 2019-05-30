@@ -42,5 +42,14 @@ namespace LoopsGame
                 Environment.Exit(0);
             }
         }
+
+        //view high score menu probably would go here
+
+        public void ExitGame()
+        {
+            Environment.Exit(0);
+        }
+
+        //exit method could probably record score before exiting?
     }
 }
