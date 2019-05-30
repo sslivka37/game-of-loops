@@ -25,7 +25,7 @@ namespace LoopsGame
             forLoopsGame.AskForFiveNumbers();
 
             var userIntList = new List<int>();
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 string userInput = Console.ReadLine();
                 int userInt;
@@ -43,8 +43,12 @@ namespace LoopsGame
             forLoopsGame.AskForOneNumber();
             forLoopsGame.NumberInput = int.Parse(Console.ReadLine());
             forLoopsGame.CountByOdds();
-            
 
+            //option 4
+
+            whileLoopsGame.AskForPin();
+            whileLoopsGame.CreateRandomPin();
+            
             
 
             
