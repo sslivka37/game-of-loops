@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LoopsGame
 {
@@ -19,15 +20,33 @@ namespace LoopsGame
             loopsGame.NameInput = Console.ReadLine();
             loopsGame.CheckForAs();
 
+            //option 2
+            loopsGame.AskForFiveNumbers();
+
+            var userIntList = new List<int>();
+            for(int i = 0; i < 5; i++)
+            {
+                string userInput = Console.ReadLine();
+                int userInt;
+
+                if (Int32.TryParse(userInput, out userInt))
+                {
+                    userIntList.Add(userInt);
+                }
+            }
+
+            loopsGame.MaxAndMinUserInput = userIntList;
+            loopsGame.CheckForMaxAndMin();
+
             //option 3
             loopsGame.AskForOneNumber();
             loopsGame.NumberInput = int.Parse(Console.ReadLine());
             loopsGame.CountByOdds();
             
 
-            //2-max and min values game
+            
 
-            //3-count by odds game
+            
 
             //4-guess the binary PIN game
 

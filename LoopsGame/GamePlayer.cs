@@ -8,7 +8,7 @@ namespace LoopsGame
     {
 
         public string NameInput { get; set; }
-        public int [] MaxAndMinUserInput { get; set; }
+        public List <int> MaxAndMinUserInput { get; set; }
 
         public int NumberInput { get; set; }
      
@@ -45,7 +45,7 @@ namespace LoopsGame
             int maximumValue = MaxAndMinUserInput[0];
             int minimumValue = MaxAndMinUserInput[0];
 
-            for (int i= 0; i < MaxAndMinUserInput.Length; i++)
+            for (int i= 0; i < MaxAndMinUserInput.Count; i++)
             {
                 if (MaxAndMinUserInput[i] > maximumValue)
                 {
