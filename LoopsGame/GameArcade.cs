@@ -8,12 +8,13 @@ namespace LoopsGame
     {
 
         public string NameInput { get; set; }
-        public List <int> MaxAndMinUserInput { get; set; }
+        public List<int> MaxAndMinUserInput { get; set; }
         public int NumberInput { get; set; }
         public List<int> RandomBinaryPin { get; set; }
-        public int [] UserGuessedPin { get; set; }
-        public bool isMatching { get; set; } 
-
+        public int[] UserGuessedPin { get; set; }
+        public bool IsMatching { get; set; }
+        public int LowInt { get; set; } 
+        public int HighInt { get; set; }
 
 
 
@@ -33,13 +34,13 @@ namespace LoopsGame
 
             Console.WriteLine($"{NameInput} has {numberOfAs} letter 'a's!");
         }
-       
+
         public void CheckForMaxAndMin()
         {
             int maximumValue = MaxAndMinUserInput[0];
             int minimumValue = MaxAndMinUserInput[0];
 
-            for (int i= 0; i < MaxAndMinUserInput.Count; i++)
+            for (int i = 0; i < MaxAndMinUserInput.Count; i++)
             {
                 if (MaxAndMinUserInput[i] > maximumValue)
                 {
@@ -50,17 +51,17 @@ namespace LoopsGame
                 {
                     minimumValue = MaxAndMinUserInput[i];
                 }
-                   
+
             }
 
             Console.WriteLine($"The maxiumum value is {maximumValue} and the minimum value is {minimumValue} ");
-        }   
-           
+        }
+
 
         public void CountByOdds()
         {
             int loopCount = 0;
-            for(int countTo = 1; countTo <= NumberInput; countTo +=2)
+            for (int countTo = 1; countTo <= NumberInput; countTo += 2)
             {
                 Console.WriteLine(countTo);
                 loopCount++;
@@ -92,17 +93,17 @@ namespace LoopsGame
 
         public void CheckIfPinMatches()
         {
-                     
-            if (UserGuessedPin[0] == RandomBinaryPin[0] && UserGuessedPin[1] == RandomBinaryPin[1] && UserGuessedPin[2] == RandomBinaryPin [2])
+
+            if (UserGuessedPin[0] == RandomBinaryPin[0] && UserGuessedPin[1] == RandomBinaryPin[1] && UserGuessedPin[2] == RandomBinaryPin[2])
             {
                 Console.WriteLine("Congratulations, you have guessed the Binary PIN!");
-                isMatching = true;
+                IsMatching = true;
             }
             else
             {
                 Console.WriteLine("Wrong, try again!");
             }
-           
+
 
         }
 
@@ -111,12 +112,29 @@ namespace LoopsGame
             char[] userName = NameInput.ToCharArray();
             Array.Reverse(userName);
             Console.WriteLine(userName);
-               
-        }    
 
-        
+        }
+
+        public void DetermineSummation()
+        {
+            int tempLow = LowInt;
+            int tempHigh = HighInt;
+            int summation = 0;
+            while (tempLow <= tempHigh)
+            {
+                summation += tempLow;
+                tempLow++;
+            }
+
+            Console.WriteLine($"The sum of {LowInt} and {HighInt} and the integers in between is {summation}");
+
+
+        }
 
     }
+
+
+
 }
 
 

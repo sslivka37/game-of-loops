@@ -44,7 +44,15 @@ namespace LoopsGame
             Console.WriteLine("Please enter a 3-Digit PIN that is in Binary format (ie, 0 or 1).");
         }
 
+        public void AskForLowInt()
+        {
+            Console.WriteLine("Enter a low positive integer");
+        }
 
+        public void AskForHighInt()
+        {
+            Console.WriteLine("Enter a high positive integer");
+        }
 
         public void AskToPlayAgain()
         {
