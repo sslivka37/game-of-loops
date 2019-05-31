@@ -21,6 +21,7 @@ namespace LoopsGame
         public bool HasLetter { get; set; }
         public bool HasSpecialChar { get; set; }
         public bool IsValidUserName { get; set; }
+        public int HighScore { get; set; } = 0;
 
 
 
@@ -39,6 +40,7 @@ namespace LoopsGame
             }
 
             Console.WriteLine($"{NameInput} has {numberOfAs} letter 'a's!");
+            HighScore += 10;
         }
 
         public void CheckForMaxAndMin()
@@ -61,6 +63,7 @@ namespace LoopsGame
             }
 
             Console.WriteLine($"The maxiumum value is {maximumValue} and the minimum value is {minimumValue} ");
+            HighScore += 20;
         }
 
 
@@ -74,6 +77,7 @@ namespace LoopsGame
 
             }
             Console.WriteLine($"Counted {loopCount} odd numbers!");
+            HighScore += 15;
         }
 
         public void CreateRandomPin()
@@ -104,6 +108,7 @@ namespace LoopsGame
             {
                 Console.WriteLine("Congratulations, you have guessed the Binary PIN!");
                 IsMatching = true;
+                HighScore += 50;
             }
             else
             {
@@ -118,6 +123,7 @@ namespace LoopsGame
             char[] userName = NameInput.ToCharArray();
             Array.Reverse(userName);
             Console.WriteLine(userName);
+            HighScore += 15;
 
         }
 
@@ -133,6 +139,7 @@ namespace LoopsGame
             }
 
             Console.WriteLine($"The sum of {LowInt} and {HighInt} and the integers in between is {summation}");
+            HighScore += 30;
 
 
         }
@@ -178,6 +185,7 @@ namespace LoopsGame
             {
                 Console.WriteLine("Congratulations, you have entered a valid user name!");
                 IsValidUserName = true;
+                HighScore += 100;
             }
             else
             {

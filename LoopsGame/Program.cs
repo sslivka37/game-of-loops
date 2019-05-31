@@ -152,7 +152,9 @@ namespace LoopsGame
                 //option 8 - exit game
                 if (menu.MenuInput == 8)
                 {
+                    Console.WriteLine($"Your score is {gameArcade.HighScore}!");
                     menu.ExitGame();
+                    
                 }
 
                 menu.AskToPlayAgain();
