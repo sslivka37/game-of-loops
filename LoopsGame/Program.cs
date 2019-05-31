@@ -45,25 +45,38 @@ namespace LoopsGame
             gameArcade.CountByOdds();
 
             //option 4
-            var userPinList = new List<int>();
+            int[] userPinArray = new int [3];
             gameArcade.CreateRandomPin();
-            
 
-            menu.AskForPin();
-            for (int i = 0; i < 3; i++)
+            int numberOfTries = 0;
+
+            while (numberOfTries < 3)
             {
-                string userInput = Console.ReadLine();
-                int userInt;
-                
-                if (Int32.TryParse(userInput, out userInt))
+
+
+                menu.AskForPin();
+                for (int i = 0; i < 3; i++)
                 {
-                    userPinList.Add(userInt);
+                    string userInput = Console.ReadLine();
+                    int userInt;
+
+                    if (Int32.TryParse(userInput, out userInt))
+                    {
+                        userPinArray[i] = userInt;
+                    }
                 }
+
+                gameArcade.UserGuessedPin = userPinArray;
+
+                gameArcade.CheckIfPinMatches();
+
+                if (gameArcade.isMatching)
+                {
+                    break;
+                }
+
+                numberOfTries ++;
             }
-
-            gameArcade.UserGuessedPin = userPinList;
-
-            gameArcade.CheckIfPinMatches();
 
 
 

@@ -11,7 +11,8 @@ namespace LoopsGame
         public List <int> MaxAndMinUserInput { get; set; }
         public int NumberInput { get; set; }
         public List<int> RandomBinaryPin { get; set; }
-        public List<int> UserGuessedPin { get; set; }
+        public int [] UserGuessedPin { get; set; }
+        public bool isMatching { get; set; } 
 
 
 
@@ -89,29 +90,26 @@ namespace LoopsGame
 
         public void CheckIfPinMatches()
         {
-            int perfectMatches = 0;
-
-            for(int i = 0; i < 3; i++)
-            {
-                if (UserGuessedPin[i] == RandomBinaryPin[i])
-                {
-                    perfectMatches ++;
-                }               
-               
-            }
-            if (perfectMatches == 3)
+                     
+            if (UserGuessedPin[0] == RandomBinaryPin[0] && UserGuessedPin[1] == RandomBinaryPin[1] && UserGuessedPin[2] == RandomBinaryPin [2])
             {
                 Console.WriteLine("Congratulations, you have guessed the Binary PIN!");
+                isMatching = true;
             }
             else
             {
-                Console.WriteLine("Incorrect, try again!");
+                Console.WriteLine("Wrong, try again!");
             }
+           
 
         }
 
+            
+
+        
+
     }
-
-
 }
+
+
 
