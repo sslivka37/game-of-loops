@@ -16,12 +16,12 @@ namespace LoopsGame
 
             menu.DisplayMenu();
 
-            //option 1
+            //option 1- checking for as
             menu.AskForName();
             gameArcade.NameInput = Console.ReadLine();
             gameArcade.CheckForAs();
 
-            //option 2
+            //option 2- finding max and min from user input
             menu.AskForFiveNumbers();
 
             var userIntList = new List<int>();
@@ -39,12 +39,12 @@ namespace LoopsGame
             gameArcade.MaxAndMinUserInput = userIntList;
             gameArcade.CheckForMaxAndMin();
 
-            //option 3
+            //option 3- count by odds based on user input
             menu.AskForOneNumber();
             gameArcade.NumberInput = int.Parse(Console.ReadLine());
             gameArcade.CountByOdds();
 
-            //option 4
+            //option 4- PIN guessing game
             int[] userPinArray = new int [3];
             gameArcade.CreateRandomPin();
 
@@ -79,13 +79,17 @@ namespace LoopsGame
             }
 
 
+            //option 5 - Name Backwards
+            menu.AskForName();
+            gameArcade.NameInput = Console.ReadLine();
+            gameArcade.ReverseName();
+
+
 
 
 
 
             
-
-            //5-name backwards (string helper?)
 
             //6-summation game using <List> -> look for List summation method?
 

@@ -83,9 +83,11 @@ namespace LoopsGame
             tempList.Add(thirdDigit);
 
             RandomBinaryPin = tempList;
-            Console.WriteLine(RandomBinaryPin[0]);
-            Console.WriteLine(RandomBinaryPin[1]);
-            Console.WriteLine(RandomBinaryPin[2]);
+
+            //just for testing purposes
+            //Console.WriteLine(RandomBinaryPin[0]);
+            //Console.WriteLine(RandomBinaryPin[1]);
+            //Console.WriteLine(RandomBinaryPin[2]);
         }
 
         public void CheckIfPinMatches()
@@ -104,7 +106,13 @@ namespace LoopsGame
 
         }
 
-            
+        public void ReverseName()
+        {
+            char[] userName = NameInput.ToCharArray();
+            Array.Reverse(userName);
+            Console.WriteLine(userName);
+               
+        }    
 
         
 
