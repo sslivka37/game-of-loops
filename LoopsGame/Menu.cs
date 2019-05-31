@@ -54,6 +54,11 @@ namespace LoopsGame
             Console.WriteLine("Enter a high positive integer");
         }
 
+        public void AskForValidUserName()
+        {
+            Console.WriteLine("Enter a valid User Name");
+        }
+
         public void AskToPlayAgain()
         {
             Console.WriteLine("Would you like to play again? If so, type 'yes'");

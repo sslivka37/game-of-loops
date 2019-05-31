@@ -15,6 +15,11 @@ namespace LoopsGame
         public bool IsMatching { get; set; }
         public int LowInt { get; set; } 
         public int HighInt { get; set; }
+        public string UserName { get; set; }
+        public bool HasInt { get; set; }
+        public bool HasLetter { get; set; }
+        public bool HasSpecialChar { get; set; }
+        public bool IsValidUserName { get; set; }
 
 
 
@@ -130,6 +135,56 @@ namespace LoopsGame
 
 
         }
+
+        public void CheckUserName()
+        {
+            char[] userName = UserName.ToCharArray();           
+            
+
+            for (int i =0; i <userName.Length; i++)
+            {
+                if (Char.IsDigit(userName[i]))
+                {
+                    HasInt = true;
+                }
+                
+            }
+
+            for (int i =0; i<userName.Length; i++)
+            {
+                if (Char.IsLetter(userName[i]))
+                {
+                    HasLetter = true;
+                }
+               
+            }
+
+            for(int i =0; i<userName.Length; i++)
+            {
+                if (userName[i]=='!' || userName[i] == '*' || userName[i] == '?' || userName[i] == '#')
+                {
+                    HasSpecialChar = true;
+                }
+                
+            }
+
+            if (HasInt && HasLetter && HasSpecialChar)
+            {
+                Console.WriteLine("Congratulations, you have entered a valid user name!");
+                IsValidUserName = true;
+            }
+            else
+            {
+                Console.WriteLine("Not a valid user name, try again!");
+            }
+           
+        }
+
+
+
+
+
+
 
     }
 
