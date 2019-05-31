@@ -4,20 +4,18 @@ using System.Text;
 
 namespace LoopsGame
 {
-    class ForLoopsGamePlayer
+    class GameArcade
     {
 
         public string NameInput { get; set; }
         public List <int> MaxAndMinUserInput { get; set; }
-
         public int NumberInput { get; set; }
-     
+        public List<int> randomBinaryPin { get; set; }
+        public List<int> userGuessedPin { get; set; }
 
-        public void AskForName ()
-        {
-            Console.WriteLine("Please enter your first and last name:");
-        }
-        
+
+
+
         public void CheckForAs()
         {
             char checkForCapitalA = 'A';
@@ -34,12 +32,7 @@ namespace LoopsGame
 
             Console.WriteLine($"{NameInput} has {numberOfAs} letter 'a's!");
         }
-
-        public void AskForFiveNumbers()
-        {
-            Console.WriteLine("Please enter five numbers");
-        }
-
+       
         public void CheckForMaxAndMin()
         {
             int maximumValue = MaxAndMinUserInput[0];
@@ -60,13 +53,8 @@ namespace LoopsGame
             }
 
             Console.WriteLine($"The maxiumum value is {maximumValue} and the minimum value is {minimumValue} ");
-        }
-        
-
-        public void AskForOneNumber()
-        {
-            Console.WriteLine("Enter a positive number");
-        }
+        }   
+           
 
         public void CountByOdds()
         {
@@ -80,6 +68,27 @@ namespace LoopsGame
             Console.WriteLine($"Counted {loopCount} odd numbers!");
         }
 
-       
+        public void CreateRandomPin()
+        {
+            var tempList = new List<int>();
+
+            Random random = new Random();
+            int firstDigit = random.Next(0, 2);
+            int secondDigit = random.Next(0, 2);
+            int thirdDigit = random.Next(0, 2);
+
+            tempList.Add(firstDigit);
+            tempList.Add(secondDigit);
+            tempList.Add(thirdDigit);
+
+            randomBinaryPin = tempList;
+            Console.WriteLine(randomBinaryPin[0]);
+            Console.WriteLine(randomBinaryPin[1]);
+            Console.WriteLine(randomBinaryPin[2]);
+        }
+
     }
+
+
 }
+

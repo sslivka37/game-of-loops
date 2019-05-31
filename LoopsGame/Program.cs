@@ -11,18 +11,18 @@ namespace LoopsGame
 
             
             Menu menu = new Menu();
-            ForLoopsGamePlayer forLoopsGame = new ForLoopsGamePlayer();
-            WhileLoopsGamePlayer whileLoopsGame = new WhileLoopsGamePlayer();
+            GameArcade gameArcade = new GameArcade();
+            
 
             menu.DisplayMenu();
 
             //option 1
-            forLoopsGame.AskForName();
-            forLoopsGame.NameInput = Console.ReadLine();
-            forLoopsGame.CheckForAs();
+            menu.AskForName();
+            gameArcade.NameInput = Console.ReadLine();
+            gameArcade.CheckForAs();
 
             //option 2
-            forLoopsGame.AskForFiveNumbers();
+            menu.AskForFiveNumbers();
 
             var userIntList = new List<int>();
             for (int i = 0; i < 5; i++)
@@ -36,24 +36,35 @@ namespace LoopsGame
                 }
             }
 
-            forLoopsGame.MaxAndMinUserInput = userIntList;
-            forLoopsGame.CheckForMaxAndMin();
+            gameArcade.MaxAndMinUserInput = userIntList;
+            gameArcade.CheckForMaxAndMin();
 
             //option 3
-            forLoopsGame.AskForOneNumber();
-            forLoopsGame.NumberInput = int.Parse(Console.ReadLine());
-            forLoopsGame.CountByOdds();
+            menu.AskForOneNumber();
+            gameArcade.NumberInput = int.Parse(Console.ReadLine());
+            gameArcade.CountByOdds();
 
             //option 4
 
-            whileLoopsGame.AskForPin();
-            whileLoopsGame.CreateRandomPin();
-            
-            
+            var userPinList = new List<int>();
+            gameArcade.CreateRandomPin();
+            menu.AskForPin();
+            for (int i = 0; i < 3; i++)
+            {
+                string userInput = Console.ReadLine();
+                int userInt;
+                
+                if (Int32.TryParse(userInput, out userInt))
+                {
+                    userPinList.Add(userInt);
+                }
+            }
+
+
+
+
 
             
-
-            //4-guess the binary PIN game
 
             //5-name backwards (string helper?)
 

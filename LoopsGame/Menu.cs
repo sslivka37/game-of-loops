@@ -24,6 +24,28 @@ namespace LoopsGame
             //press 8 to view high score? change exit to 9
         }
 
+        public void AskForName()
+        {
+            Console.WriteLine("Please enter your first and last name:");
+        }
+
+        public void AskForFiveNumbers()
+        {
+            Console.WriteLine("Please enter five numbers");
+        }
+
+        public void AskForOneNumber()
+        {
+            Console.WriteLine("Enter a positive number");
+        }
+
+        public void AskForPin()
+        {
+            Console.WriteLine("Please enter a 3-Digit PIN that is in Binary format (ie, 0 or 1).");
+        }
+
+
+
         public void AskToPlayAgain()
         {
             Console.WriteLine("Would you like to play again? If so, type 'yes'");
