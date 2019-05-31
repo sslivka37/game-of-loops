@@ -39,7 +39,7 @@ namespace LoopsGame
             Console.WriteLine("Enter a positive number");
         }
 
-        public void AskForPin()
+         public void AskForPin()
         {
             Console.WriteLine("Please enter a 3-Digit PIN that is in Binary format (ie, 0 or 1).");
         }

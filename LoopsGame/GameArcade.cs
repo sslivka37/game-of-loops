@@ -10,8 +10,8 @@ namespace LoopsGame
         public string NameInput { get; set; }
         public List <int> MaxAndMinUserInput { get; set; }
         public int NumberInput { get; set; }
-        public List<int> randomBinaryPin { get; set; }
-        public List<int> userGuessedPin { get; set; }
+        public List<int> RandomBinaryPin { get; set; }
+        public List<int> UserGuessedPin { get; set; }
 
 
 
@@ -81,10 +81,33 @@ namespace LoopsGame
             tempList.Add(secondDigit);
             tempList.Add(thirdDigit);
 
-            randomBinaryPin = tempList;
-            Console.WriteLine(randomBinaryPin[0]);
-            Console.WriteLine(randomBinaryPin[1]);
-            Console.WriteLine(randomBinaryPin[2]);
+            RandomBinaryPin = tempList;
+            Console.WriteLine(RandomBinaryPin[0]);
+            Console.WriteLine(RandomBinaryPin[1]);
+            Console.WriteLine(RandomBinaryPin[2]);
+        }
+
+        public void CheckIfPinMatches()
+        {
+            int perfectMatches = 0;
+
+            for(int i = 0; i < 3; i++)
+            {
+                if (UserGuessedPin[i] == RandomBinaryPin[i])
+                {
+                    perfectMatches ++;
+                }               
+               
+            }
+            if (perfectMatches == 3)
+            {
+                Console.WriteLine("Congratulations, you have guessed the Binary PIN!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect, try again!");
+            }
+
         }
 
     }

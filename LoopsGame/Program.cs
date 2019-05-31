@@ -45,9 +45,10 @@ namespace LoopsGame
             gameArcade.CountByOdds();
 
             //option 4
-
             var userPinList = new List<int>();
             gameArcade.CreateRandomPin();
+            
+
             menu.AskForPin();
             for (int i = 0; i < 3; i++)
             {
@@ -59,6 +60,11 @@ namespace LoopsGame
                     userPinList.Add(userInt);
                 }
             }
+
+            gameArcade.UserGuessedPin = userPinList;
+
+            gameArcade.CheckIfPinMatches();
+
 
 
 
