@@ -107,7 +107,7 @@ namespace LoopsGame
             }
             else
             {
-                Console.WriteLine("Wrong, try again!");
+                Console.WriteLine("Incorrect!");
             }
 
 

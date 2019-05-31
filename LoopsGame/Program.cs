@@ -34,21 +34,25 @@ namespace LoopsGame
                 //option 2- finding max and min from user input
 
                 if (menu.MenuInput == 2)
+                {
+
+
                     menu.AskForFiveNumbers();
 
-                var userIntList = new List<int>();
-                for (int i = 0; i < 5; i++)
-                {
-                    string userInput = Console.ReadLine();
-                    int userInt;
-
-                    if (Int32.TryParse(userInput, out userInt))
+                    var userIntList = new List<int>();
+                    for (int i = 0; i < 5; i++)
                     {
-                        userIntList.Add(userInt);
+                        string userInput = Console.ReadLine();
+                        int userInt;
+
+                        if (Int32.TryParse(userInput, out userInt))
+                        {
+                            userIntList.Add(userInt);
+                        }
                     }
+                    gameArcade.MaxAndMinUserInput = userIntList;
+                    gameArcade.CheckForMaxAndMin();
                 }
-                gameArcade.MaxAndMinUserInput = userIntList;
-                gameArcade.CheckForMaxAndMin();
 
 
 
@@ -151,13 +155,18 @@ namespace LoopsGame
                     menu.ExitGame();
                 }
 
+                menu.AskToPlayAgain();
+                menu.PlayAgainInput = Console.ReadLine();
+                menu.CheckPlayAgain();
+                menu.MenuInput = int.Parse(Console.ReadLine());
 
 
-                //play again?
-
+                
                 //high score with name -> to .txt file
 
             }
+
+            
 
         }
     }
