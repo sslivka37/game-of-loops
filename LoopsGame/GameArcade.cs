@@ -16,6 +16,7 @@ namespace LoopsGame
         public int LowInt { get; set; } 
         public int HighInt { get; set; }
         public string UserName { get; set; }
+        public bool IsLongEnough { get; set; }
         public bool HasInt { get; set; }
         public bool HasLetter { get; set; }
         public bool HasSpecialChar { get; set; }
@@ -138,7 +139,12 @@ namespace LoopsGame
 
         public void CheckUserName()
         {
-            char[] userName = UserName.ToCharArray();           
+            char[] userName = UserName.ToCharArray(); 
+            
+            if (userName.Length >= 4)
+            {
+                IsLongEnough = true;
+            }
             
 
             for (int i =0; i <userName.Length; i++)
@@ -168,7 +174,7 @@ namespace LoopsGame
                 
             }
 
-            if (HasInt && HasLetter && HasSpecialChar)
+            if (IsLongEnough && HasInt && HasLetter && HasSpecialChar)
             {
                 Console.WriteLine("Congratulations, you have entered a valid user name!");
                 IsValidUserName = true;

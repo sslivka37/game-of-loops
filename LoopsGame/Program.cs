@@ -16,90 +16,98 @@ namespace LoopsGame
 
             menu.DisplayMenu();
 
-            ////option 1- checking for as
-            //menu.AskForName();
-            //gameArcade.NameInput = Console.ReadLine();
-            //gameArcade.CheckForAs();
+            //option 1- checking for as
+            menu.AskForName();
+            gameArcade.NameInput = Console.ReadLine();
+            gameArcade.CheckForAs();
 
-            ////option 2- finding max and min from user input
-            //menu.AskForFiveNumbers();
+            //option 2- finding max and min from user input
+            menu.AskForFiveNumbers();
 
-            //var userIntList = new List<int>();
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    string userInput = Console.ReadLine();
-            //    int userInt;
+            var userIntList = new List<int>();
+            for (int i = 0; i < 5; i++)
+            {
+                string userInput = Console.ReadLine();
+                int userInt;
 
-            //    if (Int32.TryParse(userInput, out userInt))
-            //    {
-            //        userIntList.Add(userInt);
-            //    }
-            //}
+                if (Int32.TryParse(userInput, out userInt))
+                {
+                    userIntList.Add(userInt);
+                }
+            }
 
-            //gameArcade.MaxAndMinUserInput = userIntList;
-            //gameArcade.CheckForMaxAndMin();
+            gameArcade.MaxAndMinUserInput = userIntList;
+            gameArcade.CheckForMaxAndMin();
 
-            ////option 3- count by odds based on user input
-            //menu.AskForOneNumber();
-            //gameArcade.NumberInput = int.Parse(Console.ReadLine());
-            //gameArcade.CountByOdds();
+            //option 3- count by odds based on user input
+            menu.AskForOneNumber();
+            gameArcade.NumberInput = int.Parse(Console.ReadLine());
+            gameArcade.CountByOdds();
 
-            ////option 4- PIN guessing game
-            //int[] userPinArray = new int[3];
-            //gameArcade.CreateRandomPin();
+            //option 4- PIN guessing game
+            int[] userPinArray = new int[3];
+            gameArcade.CreateRandomPin();
 
-            //int numberOfTries = 0;
+            int numberOfTries = 0;
 
-            //while (numberOfTries < 3)
-            //{
-
-
-            //    menu.AskForPin();
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        string userInput = Console.ReadLine();
-            //        int userInt;
-
-            //        if (Int32.TryParse(userInput, out userInt))
-            //        {
-            //            userPinArray[i] = userInt;
-            //        }
-            //    }
-
-            //    gameArcade.UserGuessedPin = userPinArray;
-
-            //    gameArcade.CheckIfPinMatches();
-
-            //    if (gameArcade.IsMatching)
-            //    {
-            //        break;
-            //    }
-
-            //    numberOfTries++;
-            //}
+            while (numberOfTries < 3)
+            {
 
 
-            ////option 5 - Name Backwards
-            //menu.AskForName();
-            //gameArcade.NameInput = Console.ReadLine();
-            //gameArcade.ReverseName();
+                menu.AskForPin();
+                for (int i = 0; i < 3; i++)
+                {
+                    string userInput = Console.ReadLine();
+                    int userInt;
 
-            ////option 6 - Sum of range between low and high number
-            //menu.AskForLowInt();
-            //gameArcade.LowInt = int.Parse(Console.ReadLine());
-            //menu.AskForHighInt();
-            //gameArcade.HighInt = int.Parse(Console.ReadLine());
-            //gameArcade.DetermineSummation();
+                    if (Int32.TryParse(userInput, out userInt))
+                    {
+                        userPinArray[i] = userInt;
+                    }
+                }
+
+                gameArcade.UserGuessedPin = userPinArray;
+
+                gameArcade.CheckIfPinMatches();
+
+                if (gameArcade.IsMatching)
+                {
+                    break;
+                }
+
+                numberOfTries++;
+            }
+
+
+            //option 5 - Name Backwards
+            menu.AskForName();
+            gameArcade.NameInput = Console.ReadLine();
+            gameArcade.ReverseName();
+
+            //option 6 - Sum of range between low and high number
+            menu.AskForLowInt();
+            gameArcade.LowInt = int.Parse(Console.ReadLine());
+            menu.AskForHighInt();
+            gameArcade.HighInt = int.Parse(Console.ReadLine());
+            gameArcade.DetermineSummation();
 
 
 
             //option 7- create a valid username that is at least four characters long, has one letter, one digit, and one special character !*?#
-            menu.AskForValidUserName();
-            gameArcade.UserName = Console.ReadLine();
-            gameArcade.CheckUserName();
 
-            
+            while (numberOfTries < 3)
+            {
+                menu.AskForValidUserName();
+                gameArcade.UserName = Console.ReadLine();
+                gameArcade.CheckUserName();
 
+                if (gameArcade.IsValidUserName == true)
+                {
+                    break;
+                }
+                
+                
+            }
             
 
 
