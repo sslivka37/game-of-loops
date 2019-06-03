@@ -6,8 +6,14 @@ namespace LoopsGame
 {
     class Menu
     {
+        private GameArcade _gameArcade;
         public int MenuInput { get; set; }
         public string PlayAgainInput { get; set; }
+
+        public Menu(GameArcade gameArcade)
+        {
+            this._gameArcade = gameArcade;
+        }
 
         public void DisplayMenu()
         {
@@ -74,6 +80,7 @@ namespace LoopsGame
             else 
             {
                 Console.WriteLine("Thank you for playing!");
+                //record high score here
                 Environment.Exit(0);
             }
         }

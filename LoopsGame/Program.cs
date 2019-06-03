@@ -10,9 +10,10 @@ namespace LoopsGame
             Console.WriteLine("Welcome to the game of loops!");
 
             
-            Menu menu = new Menu();
-            GameArcade gameArcade = new GameArcade();
             
+            GameArcade gameArcade = new GameArcade();
+            Menu menu = new Menu(gameArcade);
+
 
             menu.DisplayMenu();
             menu.MenuInput = int.Parse(Console.ReadLine());
@@ -153,6 +154,7 @@ namespace LoopsGame
                 if (menu.MenuInput == 8)
                 {
                     Console.WriteLine($"Your score is {gameArcade.HighScore}!");
+                    gameArcade.RecordHighScore();                    
                     menu.ExitGame();
                     
                 }

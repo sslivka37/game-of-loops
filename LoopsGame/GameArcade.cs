@@ -103,7 +103,6 @@ namespace LoopsGame
 
         public void CheckIfPinMatches()
         {
-
             if (UserGuessedPin[0] == RandomBinaryPin[0] && UserGuessedPin[1] == RandomBinaryPin[1] && UserGuessedPin[2] == RandomBinaryPin[2])
             {
                 Console.WriteLine("Congratulations, you have guessed the Binary PIN!");
@@ -114,8 +113,6 @@ namespace LoopsGame
             {
                 Console.WriteLine("Incorrect!");
             }
-
-
         }
 
         public void ReverseName()
@@ -140,8 +137,7 @@ namespace LoopsGame
 
             Console.WriteLine($"The sum of {LowInt} and {HighInt} and the integers in between is {summation}");
             HighScore += 30;
-
-
+            
         }
 
         public void CheckUserName()
@@ -169,9 +165,7 @@ namespace LoopsGame
                     HasSpecialChar = true;
                 }
 
-            }
-
-            
+            }            
 
             if (IsLongEnough && HasInt && HasLetter && HasSpecialChar)
             {
@@ -184,6 +178,22 @@ namespace LoopsGame
                 Console.WriteLine("Not a valid user name, try again!");
             }
            
+        }
+
+        public void RecordHighScore()
+        {
+            string highScoreName;
+            string highScoreString;
+
+            Console.WriteLine("Please enter your name to record high score:");
+            highScoreName = Console.ReadLine();
+
+            highScoreString = HighScore.ToString();
+
+            using (System.IO.StreamWriter highScoreFile = new System.IO.StreamWriter(@"C:\Users\sslivka\source\repos\LoopsGame\LoopsGame\HighScore.txt", true))
+            {
+                highScoreFile.WriteLine(highScoreName + "-" + highScoreString);
+            }
         }
 
 
