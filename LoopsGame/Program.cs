@@ -18,7 +18,7 @@ namespace LoopsGame
             menu.DisplayMenu();
             menu.MenuInput = int.Parse(Console.ReadLine());
 
-            while (menu.MenuInput > 0 && menu.MenuInput <= 8)
+            while (menu.MenuInput > 0 && menu.MenuInput <= 9)
             {
 
                 //option 1- checking for as
@@ -30,8 +30,7 @@ namespace LoopsGame
                     gameArcade.CheckForAs();
                 }
 
-
-
+                
                 //option 2- finding max and min from user input
 
                 if (menu.MenuInput == 2)
@@ -55,8 +54,7 @@ namespace LoopsGame
                     gameArcade.CheckForMaxAndMin();
                 }
 
-
-
+                
                 //option 3- count by odds based on user input
 
                 if (menu.MenuInput == 3)
@@ -66,8 +64,7 @@ namespace LoopsGame
                     gameArcade.CountByOdds();
                 }
 
-
-
+                
                 //option 4- PIN guessing game
 
                 if (menu.MenuInput == 4)
@@ -106,8 +103,7 @@ namespace LoopsGame
                     }
 
                 }
-
-
+                
 
                 //option 5 - Name Backwards
 
@@ -117,8 +113,7 @@ namespace LoopsGame
                     gameArcade.NameInput = Console.ReadLine();
                     gameArcade.ReverseName();
                 }
-
-
+                
 
                 //option 6 - Sum of range between low and high number
 
@@ -150,8 +145,14 @@ namespace LoopsGame
                     }
                 }
 
-                //option 8 - exit game
+                //option 8 - view high scores
                 if (menu.MenuInput == 8)
+                {
+                    gameArcade.ViewHighScoreList();
+                }
+
+                //option 9 - exit game
+                if (menu.MenuInput == 9)
                 {
                     Console.WriteLine($"Your score is {gameArcade.HighScore}!");
                     gameArcade.RecordHighScore();                    
@@ -166,7 +167,7 @@ namespace LoopsGame
 
 
                 
-                //high score with name -> to .txt file
+                
 
             }
 

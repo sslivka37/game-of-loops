@@ -196,7 +196,15 @@ namespace LoopsGame
             }
         }
 
+        public void ViewHighScoreList()
+        {
+            string[] highScoreView = System.IO.File.ReadAllLines(@"C:\Users\sslivka\source\repos\LoopsGame\LoopsGame\HighScore.txt");
+            for (int i = 0; i < highScoreView.Length; i++)
+            {
+                Console.WriteLine(highScoreView[i]);
+            }
 
+        }
 
 
 

@@ -25,9 +25,10 @@ namespace LoopsGame
             Console.WriteLine("Press 5 to play 'Backwards Name' game.");
             Console.WriteLine("Press 6 to play 'Number Summation' game");
             Console.WriteLine("Press 7 to play 'Username Creation' game.");
-            Console.WriteLine("Press 8 to Exit");
+            Console.WriteLine("Press 8 to view High Scores.");
+            Console.WriteLine("Press 9 to Exit");
 
-            //press 8 to view high score? change exit to 9
+            
         }
 
         public void AskForName()
@@ -92,6 +93,6 @@ namespace LoopsGame
             Environment.Exit(0);
         }
 
-        //exit method could probably record score before exiting?
+        
     }
 }
