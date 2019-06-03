@@ -160,26 +160,18 @@ namespace LoopsGame
                 {
                     HasInt = true;
                 }
-                
-            }
-
-            for (int i =0; i<userName.Length; i++)
-            {
                 if (Char.IsLetter(userName[i]))
                 {
                     HasLetter = true;
                 }
-               
-            }
-
-            for(int i =0; i<userName.Length; i++)
-            {
-                if (userName[i]=='!' || userName[i] == '*' || userName[i] == '?' || userName[i] == '#')
+                if (userName[i] == '!' || userName[i] == '*' || userName[i] == '?' || userName[i] == '#')
                 {
                     HasSpecialChar = true;
                 }
-                
+
             }
+
+            
 
             if (IsLongEnough && HasInt && HasLetter && HasSpecialChar)
             {
