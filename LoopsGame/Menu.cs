@@ -79,13 +79,13 @@ namespace LoopsGame
             }
             else 
             {
-                Console.WriteLine("Thank you for playing!");
-                //record high score here
+                Console.WriteLine($"Thank you for playing! Your high score is {_gameArcade.HighScore}");
+                _gameArcade.RecordHighScore();                
                 Environment.Exit(0);
             }
         }
 
-        //view high score menu probably would go here
+        
 
         public void ExitGame()
         {
