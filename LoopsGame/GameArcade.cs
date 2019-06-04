@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LoopsGame
@@ -13,7 +14,7 @@ namespace LoopsGame
         public List<int> RandomBinaryPin { get; set; }
         public int[] UserGuessedPin { get; set; }
         public bool IsMatching { get; set; }
-        public int LowInt { get; set; } 
+        public int LowInt { get; set; }
         public int HighInt { get; set; }
         public string UserName { get; set; }
         public bool IsLongEnough { get; set; }
@@ -66,7 +67,7 @@ namespace LoopsGame
             HighScore += 20;
         }
 
-
+        //method acceopts int, then loops starting at 1 +=2 to count odds, ie, 1,3,5,7,9... and loop count keeps track of number of odds counted (works if user enters 1)
         public void CountByOdds()
         {
             int loopCount = 0;
@@ -136,14 +137,20 @@ namespace LoopsGame
             }
 
             Console.WriteLine($"The sum of {LowInt} and {HighInt} and the integers in between is {summation}");
+
+            var intList = new List<int>();
+            for(int i= LowInt; i <= HighInt; i++)
+            {
+                intList.Add(i);
+            }
+            Console.WriteLine($"The sum of {LowInt} and {HighInt} and the integers in between is {intList.Sum()}");
             HighScore += 30;
             
         }
 
         public void CheckUserName()
         {
-            char[] userName = UserName.ToCharArray(); 
-            
+            char[] userName = UserName.ToCharArray();             
             if (userName.Length >= 4)
             {
                 IsLongEnough = true;
@@ -196,6 +203,10 @@ namespace LoopsGame
             }
         }
 
+        //how to handle file not existing
+        //name but no score
+        //score but no name
+
         public void ViewHighScoreList()
         {
             string[] highScoreView = System.IO.File.ReadAllLines(@"C:\Users\sslivka\source\repos\LoopsGame\LoopsGame\HighScore.txt");
@@ -205,38 +216,30 @@ namespace LoopsGame
 
             for (int i = 0; i < highScoreView.Length; i++)
             {
-                string [] highScoreSplit = highScoreView[i].Split('-');
-                string name = highScoreSplit[0];
-                int score = int.Parse(highScoreSplit[1]);
+                if (!String.IsNullOrWhiteSpace(highScoreView[i]))
+                {
+                    string[] highScoreSplit = highScoreView[i].Split('-');
 
-                highScoreList.Add(score, name);    
-            }
+                    if (highScoreSplit.Length ==2)
+                    {
+                        string name = highScoreSplit[0];
+                        int score = int.Parse(highScoreSplit[1]);
 
-            
+                        highScoreList.Add(score, name);
+                    }
+
+                    
+                }    
+            }                   
 
             foreach (KeyValuePair<int, string> kvp in highScoreList)
             {
                 Console.WriteLine("{0} - {1}", kvp.Key, kvp.Value);
             }
-                    
-
-
-
-
-
-
-            
+                       
         }
 
-
-
-
-
-
-
     }
-
-
 
 }
 

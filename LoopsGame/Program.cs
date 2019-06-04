@@ -9,20 +9,16 @@ namespace LoopsGame
         {
             Console.WriteLine("Welcome to the game of loops!");
 
-            
-            
+
+
             GameArcade gameArcade = new GameArcade();
             Menu menu = new Menu(gameArcade);
-
-
             menu.DisplayMenu();
             menu.MenuInput = int.Parse(Console.ReadLine());
 
             while (menu.MenuInput > 0 && menu.MenuInput <= 9)
             {
-
-                //option 1- checking for as
-
+                //option 1- checking for 'A's
                 if (menu.MenuInput == 1)
                 {
                     menu.AskForName();
@@ -30,15 +26,10 @@ namespace LoopsGame
                     gameArcade.CheckForAs();
                 }
 
-                
                 //option 2- finding max and min from user input
-
                 if (menu.MenuInput == 2)
                 {
-
-
                     menu.AskForFiveNumbers();
-
                     var userIntList = new List<int>();
                     for (int i = 0; i < 5; i++)
                     {
@@ -54,9 +45,7 @@ namespace LoopsGame
                     gameArcade.CheckForMaxAndMin();
                 }
 
-                
                 //option 3- count by odds based on user input
-
                 if (menu.MenuInput == 3)
                 {
                     menu.AskForOneNumber();
@@ -64,59 +53,44 @@ namespace LoopsGame
                     gameArcade.CountByOdds();
                 }
 
-                
                 //option 4- PIN guessing game
-
                 if (menu.MenuInput == 4)
                 {
                     int[] userPinArray = new int[3];
                     gameArcade.CreateRandomPin();
-
                     int numberOfTries = 0;
-
                     while (numberOfTries < 3)
                     {
-
-
                         menu.AskForPin();
                         for (int i = 0; i < 3; i++)
                         {
                             string userInput = Console.ReadLine();
                             int userInt;
-
                             if (Int32.TryParse(userInput, out userInt))
                             {
                                 userPinArray[i] = userInt;
                             }
                         }
-
                         gameArcade.UserGuessedPin = userPinArray;
-
                         gameArcade.CheckIfPinMatches();
-
                         if (gameArcade.IsMatching)
                         {
                             break;
                         }
-
                         numberOfTries++;
                     }
 
                 }
-                
 
                 //option 5 - Name Backwards
-
                 if (menu.MenuInput == 5)
                 {
                     menu.AskForName();
                     gameArcade.NameInput = Console.ReadLine();
                     gameArcade.ReverseName();
                 }
-                
 
                 //option 6 - Sum of range between low and high number
-
                 if (menu.MenuInput == 6)
                 {
                     menu.AskForLowInt();
@@ -137,7 +111,6 @@ namespace LoopsGame
                         menu.AskForValidUserName();
                         gameArcade.UserName = Console.ReadLine();
                         gameArcade.CheckUserName();
-
                         if (gameArcade.IsValidUserName == true)
                         {
                             break;
@@ -155,22 +128,17 @@ namespace LoopsGame
                 if (menu.MenuInput == 9)
                 {
                     Console.WriteLine($"Your score is {gameArcade.HighScore}!");
-                    gameArcade.RecordHighScore();                    
+                    gameArcade.RecordHighScore();
                     menu.ExitGame();
-                    
+
                 }
 
                 menu.AskToPlayAgain();
                 menu.PlayAgainInput = Console.ReadLine();
                 menu.CheckPlayAgain();
                 menu.MenuInput = int.Parse(Console.ReadLine());
-
-
-                
-                
-
+                                                          
             }
-
             
 
         }
