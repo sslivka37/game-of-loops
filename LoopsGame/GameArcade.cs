@@ -199,8 +199,9 @@ namespace LoopsGame
         public void ViewHighScoreList()
         {
             string[] highScoreView = System.IO.File.ReadAllLines(@"C:\Users\sslivka\source\repos\LoopsGame\LoopsGame\HighScore.txt");
+            var descendingComparer = Comparer<int>.Create((x, y) => y.CompareTo(x));
 
-            var highScoreList = new SortedList<int, string>();
+            var highScoreList = new SortedList<int, string>(descendingComparer);
 
             for (int i = 0; i < highScoreView.Length; i++)
             {
@@ -211,23 +212,20 @@ namespace LoopsGame
                 highScoreList.Add(score, name);    
             }
 
+            
+
             foreach (KeyValuePair<int, string> kvp in highScoreList)
             {
                 Console.WriteLine("{0} - {1}", kvp.Key, kvp.Value);
             }
-
-                
-
+                    
 
 
 
 
 
-            //for (int i = 0; i < highScoreView.Length; i++)
-            //{
-            //    Console.WriteLine(highScoreView[i]);
-            //}
 
+            
         }
 
 
